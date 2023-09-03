@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bg-glow {
+  position: absolute;
+  top: 0;
+  padding-left: 2.5rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 0;
+  left: 0;
+  right: 0;
+}
+
+.glow-1 {
+  background-color: #ef233c;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 100%;
+  mix-blend-mode: multiply;
+  filter: blur(64px);
+  opacity: 0.2;
+}
+
+.glow-2 {
+  background-color: #04868b;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 100%;
+  mix-blend-mode: multiply;
+  filter: blur(64px);
+  opacity: 0.2;
+  margin-left: 2.5rem;
+  margin-right: -2.5rem;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  width: 450px;
+  height: 450px;
+  border: 20px solid #172554;
+  background-color: #bfdbfe;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 6px 6px 12px gray;
+}
+
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #172554;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  z-index: 100000;
+}
+
+.clock span {
+  position: absolute;
+  inset: 20px;
+  color: #1e3a8a;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--n)));
+}
+
+.clock span strong {
+  font-size: 2rem;
+  font-weight: 600;
+  display: inline-block;
+  transform: rotate(calc(-30deg * var(--n)));
+}
+
+.hand {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.hand i {
+  position: absolute;
+  width: 6px;
+  height: 50%;
+  background: var(--clr);
+  transform-origin: bottom;
+  border-radius: 50% 50% 0 0;
+}
+
+.hand:nth-child(1) i {
+  width: 4px;
+}
+
+.hand:nth-child(2) i {
+  width: 3px;
+}
+
+.min {
+  width: 240px;
+  height: 240px;
+  z-index: 9;
+}
+
+.hr {
+  width: 180px;
+  height: 180px;
+  z-index: 8;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+  color: #172554;
+  position: absolute;
+  inset: 100px;
+  opacity: 0.75;
+  text-align: center;
+}
